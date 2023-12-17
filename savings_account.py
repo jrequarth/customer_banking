@@ -4,7 +4,7 @@ from Accounts import Account
 
 #Jay's Note - this is a subclass - think inheritance!!!!
 # Define a function for the Savings Account
-def create_savings_account(balance, interest_rate, months): #?????????????????????
+def create_savings_account(balance, interest_rate, months):
     """Creates a savings account, calculates interest earned, and updates 
         the account balance.
 
@@ -21,20 +21,26 @@ def create_savings_account(balance, interest_rate, months): #???????????????????
     # interest parameters.
     #  Hint: You need to add the interest as a value, i.e, 0.
     # ADD YOUR CODE HERE
+    current_data = Account(balance, interest = 0.00)
 
     # Calculate interest earned
-     # ADD YOUR CODE HERE
+    # ADD YOUR CODE HERE
+    int_accrued = ((interest_rate/100) * (months/12))
 
     # Update the savings account balance by adding the interest earned
     # ADD YOUR CODE HERE
+    new_balance = current_data.balance + int_accrued
 
     # Pass the updated_balance to the set balance method using the instance of 
     # the SavingsAccount class.??????????????????????Account class?????????
     # ADD YOUR CODE HERE
+    current_data.set_balance(new_balance)
 
     # Pass the interest_earned to the set interest method using the instance 
     # of the SavingsAccount class.???????????????????Account class??????????
     # ADD YOUR CODE HERE
+    current_data.set_interest(int_accrued)
 
     # Return the updated balance and interest earned.
-    return  # ADD YOUR CODE HERE
+    return Account.get_balance(), Account.get_interest() #???????????????????????
+
